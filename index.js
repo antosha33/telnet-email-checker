@@ -11,7 +11,8 @@ async function run() {
 
   // these parameters are just examples and most probably won't work for your use-case.
   let params = {
-    host: 'gmail-smtp-in.l.google.com',
+    // host: 'gmail-smtp-in.l.google.com',
+    host: 'mxs.mail.ru',
     port: 25,
     shellPrompt: / .+/, // or negotiationMandatory: false
     timeout: 1500
@@ -25,7 +26,9 @@ async function run() {
 
   let res = await connection.send('helo test.com')
   res = await connection.send('mail from: <me@example.com>')
-  res = await connection.send('rcpt to: <123yegoroff33@gmail.com>')
+  res = await connection.send('rcpt to: <an_tosha33@mail.ru>')
+  res = await connection.send('data')
+  res = await connection.send('.')
   console.log('async result:', res)
 }
 
