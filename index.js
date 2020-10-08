@@ -48,12 +48,16 @@ module.exports = class EmailChecker {
     try {
       let res;
       res = await this.telnet.send('helo example.com')
+      console.log(res);
       res = await this.telnet.send(`mail from: <me@${domain}>`);
+      console.log(res);
       res = await this.telnet.send(`rcpt to: <${email}>`);
+      console.log(res);
       switch (domain) {
         case 'mail.ru':
           res = await this.telnet.send('data');
           res = await this.telnet.send('.')
+          console.log(res);
           if (res.search('invalid mailbox') !== -1) {
             this.telnet.end();
             return false;

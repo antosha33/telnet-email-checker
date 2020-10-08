@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mongoose": "^5.10.8",
     "telnet-client": "^1.4.6"
   }
 }
